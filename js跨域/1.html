@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//scpipt 标签按照顺序执行	
+		/*
+			1.子域和父域
+			document.domain = 'a.com';
+			
+			2.服务器代理
+
+			3.script标签：jsonp
+
+			4.location.hash
+
+			5.window.name
+
+			6.falsh
+
+			7.html5 postMessage
+
+		*/
+
+		function createJs(sUrl) {
+			var oScript = document.createElement('script');
+			oScript.type = 'text/javascript';
+			oScript.src = sUrl;
+			document.getElementsByTagName('head')[0].appendChild(oScript);
+		}
+		createJs('1.js');
+
+
+		function box (json) {
+			alert(json.name) 
+		}
+		
+	</script>
+	<!-- <script type="text/javascript">
+		box({name:'li'})
+	</script> -->
+</body>
+</html>
